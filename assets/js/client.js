@@ -10,9 +10,10 @@
 //= require_tree 'views'
 
 
-// Global object
+// Websockets talk on port 80 on Nodester, regardless of listen port
+if (ENV === 'production') PORT = 80;
 window.irc = {
-  socket: io.connect(),
+  socket: io.connect(null, {port: PORT}),
   chatWindows: new WindowList,
   connected: false
 };
