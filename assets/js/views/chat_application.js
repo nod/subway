@@ -9,7 +9,7 @@ var ChatApplicationView = Backbone.View.extend({
 
 
     // Preload sound files
-    if (this._supportedFormat) {
+    if (this._supportedFormat && this._playSounds) {
       this.sounds = {
         newPm: this._loadSound('new-pm'),
         message: this._loadSound('msg')
